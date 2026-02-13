@@ -1,0 +1,31 @@
+---
+title: "Test markdown"
+author: "Jason Pither"
+date: "2026-02-13"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+set.seed(156) # for computational reproducibility
+```
+
+## R Markdown
+
+Let's generate a dataset
+
+```{r makedata}
+testdata <- data.frame(
+  x = rnorm(n = 30, mean = 4, sd = 1.2),
+  y = rnorm(n = 30, mean = 6, sd = 1.6)
+)
+```
+
+Plot a scatterplot
+
+```{r scatter, fig.cap = "Scatterplot of Y versus X for n = 30 observations."}
+plot(testdata$x, testdata$y, main = "", xlab = "X", ylab = "Y")
+```
+
